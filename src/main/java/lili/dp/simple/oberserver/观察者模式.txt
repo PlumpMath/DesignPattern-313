@@ -1,0 +1,36 @@
+The observer Pattern: defines a set of objects a one to many dependency between objects so that when one
+object changes state, all of its dependents are notified and updated automatically.
+
+Observer模式是行为模式之一，他的作用是当一个对象的状态发生变化时，
+能够自动通知其他关联对象，自动刷新对象状态。
+Observer模式提供给关联对象一种同步通信的手段，使某个对象与依赖它的其他对象
+之前保持同步。
+Observer模式的典型应用
+- 侦听事件驱动程序设计中的外部事件
+- 侦听/监视某个对象的状态变化
+- 发布者/订阅者(publisher/subscriber)模型中，当一个外部事件
+（新的产品，消息的出现等等）被触发时，通知邮件列表中的订阅者
+Observer模式的优点
+- 对象之间可以进行同步通信
+- 可以同时通知一到多个关联对象
+- 对象之间的关系以松耦合的形式组合，互不依赖
+Observer模式的角色：
+1、subject（被观察者）
+    被观察的对象，当需要被观察的状态发生变化时，需要通知队列中所有观察者对象。
+Subject需要维持（添加，删除，通知）一个观察者对象的队列列表。
+2、ConcreteSubject
+    被观察者的具体实现。包含一些基本的属性状态及其他操作。
+3、Observer 观察者
+    接口或抽象类。当Subject的状态发生变化时，Observer对象将通过一个callback
+    函数得到通知。
+4、ConcreteObserver
+    观察者的具体实现。得到通知后将完成一些具体的业务逻辑处理。
+
+我解释下这些类的作用：MySubject类就是我们的主对象，
+Observer1和Observer2是依赖于MySubject的对象，
+当MySubject变化时，Observer1和Observer2必然变化。
+AbstractSubject类中定义着需要监控的对象列表，
+可以对其进行修改：增加或删除被监控对象，且当MySubject变化时，
+负责通知在列表内存在的对象。我们看实现代码：
+
+
