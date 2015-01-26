@@ -1,4 +1,5 @@
  参看链接：http://blog.csdn.net/hguisu/article/details/7533759
+http://blog.csdn.net/hguisu/article/details/7533759
 
  GOF的描述是：为子系统中的一组接口提供一个统一的接口，Facade模式定义了一个更高层的接口
  使得子系统更加容易使用。

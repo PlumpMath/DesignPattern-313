@@ -1,5 +1,10 @@
+
+TODO 参看，将UML图画出来
+http://blog.csdn.net/hguisu/article/details/7556625
+
 The observer Pattern: defines a set of objects a one to many dependency between objects so that when one
 object changes state, all of its dependents are notified and updated automatically.
+
 
 Observer模式是行为模式之一，他的作用是当一个对象的状态发生变化时，
 能够自动通知其他关联对象，自动刷新对象状态。

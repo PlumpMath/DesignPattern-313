@@ -1,3 +1,6 @@
+TODO 将UML补充完整
+http://blog.csdn.net/hguisu/article/details/7558249
+
 英文：
 defines a family of algorithms, encapulates each one,
 and makes them interchangeable,Strategy lets the algorithm
