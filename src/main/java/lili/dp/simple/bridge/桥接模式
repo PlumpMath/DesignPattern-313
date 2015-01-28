@@ -1,2 +1,6 @@
 TODO
  http://blog.csdn.net/hguisu/article/details/7531960
+
+ 将抽象部分与实现部分分离，使他们都可以独立的变化。
+
+ http://blog.csdn.net/jason0539/article/details/22568865
