@@ -10,7 +10,6 @@ public class Director {
     }
 
     public void construct() {
-
         builder.buildPart1();
         builder.buildPart2();
         builder.retrieveResult();
