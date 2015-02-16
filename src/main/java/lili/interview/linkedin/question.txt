@@ -1,0 +1,11 @@
+A server receives requests from different clients...
+each client send a Runnable job and time on which this job should be run.
+Write a java program that would accept these jobs and run each job at the
+required time.
+服务器接受从不同客户端发来的请求，每个客户端发送一个Runnable作业和作业将被运行的时间。
+写一个java代码可以接受这些作业，并按照给定的时间运行每个作业。
+ Hint: the solution should have a job priority queue to hold the jobs and
+  it should be multithreaded. One thread should accept the tasks,
+  the other one should run the jobs. Also conditions and signalling will be used
+  注意：解决方案需要包括一个优先级的队列来存放这些作业，需要是多线程处理，一个线程接受任务
+  另外一个需要运行任务，竟态和信号需要使用到。
