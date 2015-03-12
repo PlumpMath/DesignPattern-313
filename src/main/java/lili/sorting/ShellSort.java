@@ -13,6 +13,9 @@ package lili.sorting;
  具体实例请参照插入排序。
 
  希尔排序是插入排序的改进版，在数据量大的时候对效率的提升帮助很大，数据量小的时候建议直接使用插入排序就好了。
+
+ 原理：增量缩小排序，先将序列按增量划分为元素个数相同的若干组，使用直接插入排序法进行排序，
+ 然后不断缩小增量直至为1，最后使用直接插入排序完成排序。
  */
 public class ShellSort implements SortUtil.Sort{
 
@@ -38,6 +41,16 @@ public class ShellSort implements SortUtil.Sort{
 			for(int j=i;(j>=inc)&&(data[j]<data[j-inc]);j-=inc){
 				SortUtil.swap(data,j,j-inc);
 			}
+		}
+	}
+
+	public static void main(String[] args) {
+		int[] arr = new int[]{38,17, 16, 16, 7, 31, 39, 32, 2, 11};
+		SortUtil.Sort sort = new ShellSort();
+		sort.sort(arr);
+		System.out.println("after shell sorting:" + arr);
+		for (int i = 0; i < arr.length; i++) {
+			System.out.print(arr[i]+", ");
 		}
 	}
 }

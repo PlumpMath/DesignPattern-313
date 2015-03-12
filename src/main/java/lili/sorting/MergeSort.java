@@ -3,8 +3,20 @@ package lili.sorting;
 /**
  * Created by lili on 2015/3/11.
  * 归并排序
+ * 原理：将原序列划分为有序的两个序列，然后利用归并算法进行合并，合并之后即为有序序列
+ * 要点:归并，分治
  */
 public class MergeSort implements SortUtil.Sort{
+
+	public static void main(String[] args) {
+		int[] arr = new int[]{38, 17, 16, 16, 7, 31, 39, 32, 2, 11};
+		SortUtil.Sort sort = new MergeSort();
+		sort.sort(arr);
+		System.out.println("after  sorting:" + arr);
+		for (int i = 0; i < arr.length; i++) {
+			System.out.print(arr[i] + ", ");
+		}
+	}
 
 	/** (non-Javadoc)
 	 */

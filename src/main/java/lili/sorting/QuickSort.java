@@ -18,8 +18,20 @@ package lili.sorting;
  [gt+1…n-1]对应的值都是比v大的。
 
  3） 分别对[0…lt-1]和[gt+1…n-1]两个子数组进行排序，如此递归，直至子子子数组的长度为0。
+
+ *原理：不断寻找一个序列的中点，然后对中点左右的序列递归的进行排序，直至全部序列排序完成，使用了分治的思想。
+ * 递归，分治
  */
 public class QuickSort implements SortUtil.Sort{
+	public static void main(String[] args) {
+		int[] arr = new int[]{38, 17, 16, 16, 7, 31, 39, 32, 2, 11};
+		SortUtil.Sort sort = new QuickSort();
+		sort.sort(arr);
+		System.out.println("after  sorting:" + arr);
+		for (int i = 0; i < arr.length; i++) {
+			System.out.print(arr[i] + ", ");
+		}
+	}
 
 	/** (non-Javadoc)
 	 */

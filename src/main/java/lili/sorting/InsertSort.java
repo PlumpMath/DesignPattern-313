@@ -5,11 +5,14 @@ package lili.sorting;
  * 本趟需要找到 i 对应的元素 x 的正确位置 k ，并且在寻找这个位置 k 的过程中逐个将比较过的元素往后移一位，
  * 为元素 x “腾位置”，最后将 k 对应的元素值赋为 x ，插入排序也是根据排序的特性来命名的。
  * Created by lili on 2015/3/11.
+ * 原理：将数组分为无序区和有序区两个区，然后不断的将无序区的第一个元素按大小顺序插入到有序区中去，
+ * 最终将所有无序区元素都移动到有序区完成排序。
  */
 public class InsertSort implements SortUtil.Sort{
+
+
 	@Override
 	public void sort(int[] data) {
-		int temp;
 		for(int i=1;i<data.length;i++){
 			for(int j=i;(j>0)&&(data[j]<data[j-1]);j--){
 				SortUtil.swap(data,j,j-1);
@@ -20,8 +23,12 @@ public class InsertSort implements SortUtil.Sort{
 	public static void main(String[] args) {
 		 int[] arr = new int[]{38,17, 16, 16, 7, 31, 39, 32, 2, 11};
 		InsertSort insertSort = new InsertSort();
+//		insertSort.sort(arr);
 		insertSort.sort(arr);
 		System.out.println("after sorting:" + arr);
+		for (int i = 0; i < arr.length; i++) {
+			System.out.print(arr[i]+", ");
+		}
 	}
 }
 /*

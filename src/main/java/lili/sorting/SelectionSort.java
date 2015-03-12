@@ -6,6 +6,8 @@ package lili.sorting;
  * 则需要在剩余的 [i…n-1] 中找出其中的最小值，然后将找到的最小值与 i 指向的值进行交换。
  * 因为每一趟确定元素的过程中都会有一个选择最大值的子流程，所以人们形象地称之为选择排序。
  * Created by lili on 2015/3/11.
+ * 原理：将序列划分为无序和有序区，寻找无序区中的最小值和无序区的首元素交换，
+ * 有序区扩大一个，循环最终完成全部排序
  */
 public class SelectionSort implements SortUtil.Sort {
 	@Override
@@ -18,11 +20,20 @@ public class SelectionSort implements SortUtil.Sort {
 					lowIndex = j;
 				}
 			}
-			SortUtil.swap(data,i,lowIndex);
+			SortUtil.swap(data, i, lowIndex);
+		}
+	}
+
+	public static void main(String[] args) {
+		int[] arr = new int[]{38, 17, 16, 16, 7, 31, 39, 32, 2, 11};
+		SortUtil.Sort sort = new SelectionSort();
+		sort.sort(arr);
+		System.out.println("after  sorting:" + arr);
+		for (int i = 0; i < arr.length; i++) {
+			System.out.print(arr[i] + ", ");
 		}
 	}
 }
-
 /*
 *
 * 举个实例来看看：

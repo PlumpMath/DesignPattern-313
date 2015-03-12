@@ -5,20 +5,33 @@ package lili.sorting;
  * 两层 for 循环，里层循环中判断相邻两个元素是否逆序，是的话将两个元素交换，
  * 外层循环一次，就能将数组中剩下的元素中最小的元素“浮”到最前面，所以称之为冒泡排序。
  * Created by lili on 2015/3/11.
+ * 原理： 将序列划分为无序和有序区，不断通过交换较大元素至无序区尾完成排序
+ * 要点：设计交换判断条件，提前结束以排好序的序列循环
+ *
  */
 public class BubbleSort implements SortUtil.Sort {
 	@Override
 	public void sort(int[] data) {
 		int temp;
-		for (int i =0; i<data.length;i++) {
-			for (int j = data.length-1; j>i;j--) {
-				if (data[j]<data[j-1]) {
-					SortUtil.swap(data,j,j-1);
+		for (int i = 0; i < data.length; i++) {
+			for (int j = data.length - 1; j > i; j--) {
+				if (data[j] < data[j - 1]) {
+					SortUtil.swap(data, j, j - 1);
 				}
 			}
 		}
 	}
 
+
+	public static void main(String[] args) {
+		int[] arr = new int[]{38, 17, 16, 16, 7, 31, 39, 32, 2, 11};
+		SortUtil.Sort sort = new BubbleSort();
+		sort.sort(arr);
+		System.out.println("after  sorting:" + arr);
+		for (int i = 0; i < arr.length; i++) {
+			System.out.print(arr[i] + ", ");
+		}
+	}
 }
 
 /*
