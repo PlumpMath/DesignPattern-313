@@ -1,9 +1,9 @@
-package lili.dp.simple.flyweight;
+package lili.dp.simple.flyweight.eg0;
 
 /**
  * Created by liguofang on 2015/1/29.
  */
-public class ConcreteFlyweight extends Flyweight{
+public class ConcreteFlyweight extends Flyweight {
 	private String string;
 	public ConcreteFlyweight(String str) {
 		string = str;
